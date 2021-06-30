@@ -130,3 +130,58 @@ const myCountry = {
 }
 
 console.log(`${myCountry.country} has ${myCountry.population} ${myCountry.language.toLowerCase()} speaking people, ${myCountry.neighbours.length} neighbouring countries: ${myCountry.neighbours[0]}, ${myCountry.neighbours[1]}, ${myCountry.neighbours[2]} and a capital called ${myCountry.capital}.`);
+
+// let date =  new Date().getFullYear();
+// console.log(date);
+// let newDate = new Date(1998, 5, 1);
+// console.log(newDate);
+
+
+
+const hasanObject = {
+    firstName: 'Hasan',
+    lastName: 'Khan',
+    birthYear: 1998,
+    age: function (){
+        return this.age = 2021 - this.birthYear;
+    },
+    job: 'Teacher',
+    hasDriversLicense: false,
+    getSummary: function (){
+        return `${this.firstName} ${this.lastName} is a ${this.age()} year old ${hasanObject.job.toLowerCase()} and has ${this.hasDriversLicense ? 'a' : 'no'} drivers license`;
+    }
+} 
+
+console.log(hasanObject.getSummary());
+
+const mark = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function (){
+        this.bmi = this.mass / this.height **2;
+        return this.bmi;
+    }
+}
+
+const john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+    calcBMI: function (){
+        this.bmi = this.mass / this.height **2;
+        return this.bmi;
+    }
+}
+
+if (mark.bmi > john.bmi) {
+    console.log(`Mark's BMI is ${mark.bmi} and is higher than John's (${john.bmi})`);
+} else if (john.bmi > mark.bmi) {
+    console.log(`John's BMI is ${john.bmi} and is higher than Mark's (${mark.bmi})`);
+}
+
+
+console.log(john.calcBMI());
+console.log(mark.calcBMI());
+
+console.log(john.bmi, mark.bmi);
